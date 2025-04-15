@@ -1,0 +1,185 @@
+/* Réglages de base */
+html, body {
+    height: 100%;
+    margin: 0;
+    font-family: Arial, sans-serif;
+    background-color: #E8E8E8;
+}
+.page {
+    position: relative;
+}  
+
+/* Vidéo de fond */
+.backgroundV {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;    /* Utilisation des unités viewport */
+    height: 100%;
+    overflow: hidden;
+}
+
+/* Header */
+header {
+    text-align: center;
+    position: relative;  /* Nécessaire pour le z-index */
+    z-index: 2;          /* Assure que le header reste au-dessus de la vidéo */
+}
+.header h1 {
+    background-image: url('../img/Asstech.png');
+    background-size: cover;
+    background-position: center;
+    height: 250px; /* Ajuste la hauteur selon tes besoins */
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: white;
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.7);
+    margin: 0;
+    font-size: 6rem;
+}
+
+/* Navigation */
+nav {
+    margin: 30px;
+    font-weight: 700;
+    position: relative;
+    z-index: 2;        /* Au-dessus de la vidéo */
+    text-align: center;
+}
+nav a {
+    margin: 30px;
+    color: black;
+    text-decoration: none;
+}
+
+/* Contenu principal */
+.main {
+    position: relative;
+    z-index: 2;
+    flex: 1 1;
+    line-height: 1.6;
+    border: 2px solid rgb(107, 107, 107);
+    padding: 20px;
+    margin: 20px auto;
+    width: 90%;
+    max-width: 800px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+    border-radius: 8px;
+    box-sizing: border-box;
+    background-color: #f9f9f9;
+}
+
+/* Styles pour les images */
+.profil {
+    float: left;
+    height: 150px;
+    width: 115px;
+    margin-right: 10px;
+    object-fit: cover;
+}
+.Pcmesure {
+    float: left;
+    height: 150px;
+    width: 115px;
+    margin-right: 10px;
+    object-fit: cover;
+}
+.logo {
+    float: left;
+    height: 150px;
+    width: 115px;
+    margin-right: 20px;
+    object-fit: cover;
+}
+/* Écrans ≤ 1024px (tablettes) */
+@media screen and (max-width: 1024px) {
+    .header h1 {
+        font-size: 4rem;
+        height: auto;
+        padding: 15px;
+    }
+
+    .main {
+        width: 95%;
+        max-width: 700px;
+        padding: 15px;
+    }
+
+    .profil, .Pcmesure, .logo {
+        width: 100px;
+        height: auto;
+        margin: 5px auto;
+        display: block;
+    }
+
+    nav {
+        margin: 20px;
+        text-align: center;
+    }
+
+    nav a {
+        display: block;
+        margin: 15px auto;
+    }
+}
+
+/* Écrans ≤ 768px (mobiles) */
+@media screen and (max-width: 768px) {
+    .header h1 {
+        font-size: 3rem;
+        height: auto;
+        padding: 10px;
+    }
+
+    .main {
+        width: 90%;
+        max-width: 600px;
+        padding: 10px;
+    }
+
+    .profil, .Pcmesure, .logo {
+        width: 80px;
+        height: auto;
+        margin: 5px auto;
+        display: block;
+    }
+
+    nav {
+        margin: 10px;
+    }
+
+    nav a {
+        display: block;
+        margin: 10px auto;
+        font-size: 1rem;
+    }
+}
+
+/* Écrans ≤ 480px (petits mobiles) */
+@media screen and (max-width: 480px) {
+    .header h1 {
+        font-size: 2.5rem;
+        height: auto;
+        padding: 10px;
+    }
+
+    .main {
+        width: 85%;
+        max-width: 500px;
+        padding: 8px;
+    }
+
+    .profil, .Pcmesure, .logo {
+        width: 70px;
+        height: auto;
+        margin: 5px auto;
+        display: block;
+    }
+
+    nav a {
+        font-size: 0.9rem;
+        margin: 8px auto;
+    }
+}
+

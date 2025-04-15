@@ -1,0 +1,105 @@
+footer {
+    text-align: center;
+    padding: 1em;
+    background-color: #DCDCDC;
+    color: #000;
+    margin-top: auto;
+  }
+  .columns-container {
+    display: flex; /* Utilise Flexbox pour organiser les colonnes */
+    justify-content: space-around;
+    line-height: 1.6;
+}
+
+.Sources, .logiciels {
+    list-style: none;
+    padding: 0;
+    margin: 0; 
+}
+  
+  body{
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+    margin: 0;
+  }
+  nav{
+    margin: 30px;
+}
+nav a {
+  margin: 30px;
+  color: black;
+}
+a {
+  text-decoration: none;
+}
+/* Écrans ≤ 1024px (tablettes) */
+@media screen and (max-width: 1024px) {
+  .columns-container {
+      flex-direction: column; /* Passage en colonne pour éviter les coupures */
+      align-items: center;
+      text-align: center;
+  }
+
+  .Sources, .logiciels {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: center;
+  }
+
+  footer {
+      padding: 1.5em;
+      font-size: 1rem;
+  }
+
+  nav {
+      margin: 20px;
+      text-align: center;
+  }
+
+  nav a {
+      display: block; /* Les liens passent en colonne */
+      margin: 15px auto;
+  }
+}
+
+/* Écrans ≤ 768px (mobiles) */
+@media screen and (max-width: 768px) {
+  .columns-container {
+      flex-direction: column;
+      text-align: center;
+  }
+
+  .Sources, .logiciels {
+      flex-direction: column;
+      align-items: center;
+  }
+
+  footer {
+      padding: 2em;
+      font-size: 0.9rem;
+  }
+
+  nav {
+      margin: 10px;
+  }
+
+  nav a {
+      display: block;
+      margin: 10px auto;
+      font-size: 1rem;
+  }
+}
+
+/* Écrans ≤ 480px (petits mobiles) */
+@media screen and (max-width: 480px) {
+  footer {
+      padding: 2.5em;
+      font-size: 0.8rem;
+  }
+
+  nav a {
+      font-size: 0.9rem;
+      margin: 8px auto;
+  }
+}

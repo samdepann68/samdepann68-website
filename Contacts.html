@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <link rel="stylesheet" href="CSS CONTACTS/style.css" type="text/css">
+    <link rel="stylesheet" href="CSS FOOTER/style.css" type="text/css">
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Contact</title>
+</head>
+<body>
+    <header class="header">      
+        <h1>Sam'dépann68</h1>
+        <nav>
+            <a href="Index.html">Accueil</a>
+            <a href="Contacts.html">Contacts</a>
+            <a href="Prestations.html">Prestations</a>
+            <a href="tarifs.html">Tarifs</a>
+        </nav>
+    </header>
+    <main class="main">
+        <div class="backgroundC">
+            <video id="background-video" autoplay loop muted playsinline>
+                <source src="img/matrix.mp4" type="video/mp4">
+                Votre navigateur ne supporte pas la vidéo.
+            </video>
+        </div>
+        <form id="contactForm">
+            <div class="form-container">
+                <ul class="infos">
+                    <li>
+                        <label for="name">Nom :</label>
+                        <input type="text" id="name" name="nom" required>
+                    </li>
+                    <li>
+                        <label for="mail">E-mail :</label>
+                        <input type="email" id="email" name="email" required>
+                    </li>
+                    <li>
+                        <label for="msg">Message :</label>
+                        <textarea id="message" name="message" required></textarea>
+                    </li>
+                </ul>
+                <div class="button">
+                    <button type="submit">Envoyer votre message</button>
+                </div>
+            </form>
+        </div>           
+    </main>
+    <footer>
+        <a href="https://fr.linkedin.com/" target="_blank"> <img src="logo/In.png" alt="LinkedIn" width="50px" height="38px"></a>
+        <a href="https://www.instagram.com/" target="_blank"><img src="logo/insta.png" alt="Instagram" width="50px" height="38px"></a>
+        <a href="https://www.tiktok.com/fr/" target="_blank"><img src="logo/tiktok.png" alt="TikTok" width="50px" height="38px"></a>
+        <a href="https://x.com/" target="_blank"><img src="logo/X.png" alt="X(ancien twitter)" width="50px" height="38px"></a>
+
+        <div class="columns-container">
+            <ul class="Sources">
+                <li><u>Ressources Codes:</u></li>
+                <a href="https://www.w3schools.com/" target="_blank"><li>W3School</li></a>
+                <a href="https://developer.mozilla.org/fr/" target="_blank"><li>developer mozilla</li></a>
+                <a href="https://grafikart.fr/tutoriels" target="_blank"><li>Grafikart</li></a>
+                <a href="https://openclassrooms.com/fr/" target="_blank"><li>OpenClassRoom</li></a>
+            </ul>
+            <p>Si tu veux ton devis c'est <a href="Contacts.html">ICI</p></a>
+            <ul class="logiciels">
+                <li><u>Ressources logiciels:</u></li>
+                <a href="https://code.visualstudio.com/" target="_blank"><li>VisualStudioCode</li></a>
+                <a href="https://www.adobe.com/fr/" target="_blank"><li>SuiteAdobe</li></a>
+                <a href="https://www.canva.com/" target="_blank"><li>Canva</li></a>
+            </ul>
+            
+        </div>
+    </footer>
+    <script src="formulaire.js"></script>
+</body>
+</html>
