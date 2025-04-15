@@ -1,13 +1,17 @@
 const express = require("express");
+const path = require("path");
+
 const app = express();
 const port = process.env.PORT || 3000;
 
-// Route principale
+// 🚀 Servir tes fichiers statiques (HTML, CSS, JS)
+app.use(express.static(path.join(__dirname, "public")));
+
+// 🌍 Route principale vers ton site
 app.get("/", (req, res) => {
-    res.send("Hello, Vercel! 🚀");
+    res.sendFile(path.join(__dirname, "public", "index.html"));
 });
 
-// Lancer le serveur
 app.listen(port, () => {
-    console.log(`Serveur démarré sur le port ${port}`);
+    console.log(`Serveur lancé sur http://localhost:${port}`);
 });
