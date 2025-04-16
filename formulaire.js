@@ -27,7 +27,7 @@ document.addEventListener("DOMContentLoaded", function () {
                 }
             
                 const result = await response.json();
-                alert(result.message);
+                alert(result.message); // "✅ Formulaire envoyé avec succès !");
             } catch (error) {
                 console.error("🚨 Erreur d'envoi :", error);
                 alert(error.message);
