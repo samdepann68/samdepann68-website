@@ -28,7 +28,7 @@ document.addEventListener("DOMContentLoaded", function () {
 
                 const result = await response.json();
                 form.reset(); // Efface le formulaire après envoi
-                successMessage.innerText = result.message; // Affiche le message
+                successMessage.innerText = result.message; // Met à jour le message
                 successMessage.style.display = "block"; // Rend le message visible
             } catch (error) {
                 alert("🚨 Erreur d’envoi !");
