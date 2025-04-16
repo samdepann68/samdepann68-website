@@ -9,7 +9,7 @@ module.exports = (req, res) => {
         return res.status(400).json({ error: "❌ Tous les champs sont obligatoires !" });
     }
 
-    // 📌 Ici, tu peux enregistrer les données dans une base ou un fichier si besoin.
+    // 📌 Ici, tu peux enregistrer les données dans une base si besoin.
     console.log(`Nouveau formulaire reçu : Nom: ${nom}, Email: ${email}, Message: ${message}`);
 
     res.status(200).json({ message: "✅ Formulaire traité avec succès !" });
