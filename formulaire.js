@@ -4,7 +4,7 @@ document.addEventListener("DOMContentLoaded", function () {
 
     if (form) {
         form.addEventListener("submit", async function(event) { 
-            event.preventDefault(); // Empêche la redirection
+            event.preventDefault(); // Empêche le rechargement de la page
 
             const formData = new FormData(form);
 
@@ -18,10 +18,9 @@ document.addEventListener("DOMContentLoaded", function () {
                     throw new Error("❌ Une erreur est survenue.");
                 }
 
-                const result = await response.json();
                 form.reset(); // Efface le formulaire après envoi
                 successMessage.innerText = "✅ Merci ! Votre message a bien été envoyé.";
-                successMessage.style.display = "block";
+                successMessage.style.display = "block"; // Rend le message visible
             } catch (error) {
                 alert("🚨 Erreur d’envoi !");
                 console.error(error);
