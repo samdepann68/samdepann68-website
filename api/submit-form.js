@@ -1,3 +1,11 @@
+const transporter = nodemailer.createTransport({
+    service: "gmail",
+    auth: {
+        user: process.env.EMAIL_USER, // ✅ Récupère l'email depuis Vercel
+        pass: process.env.EMAIL_PASS  // ✅ Récupère le mot de passe depuis Vercel
+    }
+});
+
 const nodemailer = require("nodemailer");
 
 module.exports = (req, res) => {
