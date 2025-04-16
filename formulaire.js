@@ -1,9 +1,10 @@
 document.addEventListener("DOMContentLoaded", function () {
     const form = document.getElementById("contactForm");
+    const successMessage = document.getElementById("success-message");
 
     if (form) {
         form.addEventListener("submit", async function(event) { 
-            event.preventDefault(); // Empêche le rechargement de la page
+            event.preventDefault(); // Empêche la redirection
 
             const nom = document.getElementById("name").value;
             const email = document.getElementById("email").value;
@@ -26,9 +27,9 @@ document.addEventListener("DOMContentLoaded", function () {
                 }
 
                 const result = await response.json();
-                document.getElementById("contactForm").reset(); // Réinitialise le formulaire
-                document.getElementById("success-message").innerText = result.message; // Affiche un message de succès
-                document.getElementById("success-message").style.display = "block"; // Rend le message visible
+                form.reset(); // Efface le formulaire après envoi
+                successMessage.innerText = result.message; // Affiche le message
+                successMessage.style.display = "block"; // Rend le message visible
             } catch (error) {
                 alert("🚨 Erreur d’envoi !");
                 console.error(error);
