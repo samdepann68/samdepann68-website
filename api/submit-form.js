@@ -9,7 +9,7 @@ module.exports = async (req, res) => {
     });
 
     req.on("end", () => {
-        console.log("Données reçues :", body);
-        res.status(200).json({ message: "Formulaire reçu !" });
+        console.log("✅ Données reçues :", body);
+        res.status(200).json({ message: "✅ Merci ! Votre message a bien été envoyé." });
     });
 };
