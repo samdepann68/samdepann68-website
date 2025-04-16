@@ -6,20 +6,12 @@ document.addEventListener("DOMContentLoaded", function () {
         form.addEventListener("submit", async function(event) { 
             event.preventDefault(); // Empêche la redirection
 
-            const nom = document.getElementById("name").value;
-            const email = document.getElementById("email").value;
-            const message = document.getElementById("message").value;
-
-            if (!nom || !email || !message) {
-                alert("🚨 Veuillez remplir tous les champs !");
-                return;
-            }
+            const formData = new FormData(form);
 
             try {
                 const response = await fetch("/submit-form", {
                     method: "POST",
-                    headers: { "Content-Type": "application/json" },
-                    body: JSON.stringify({ nom, email, message })
+                    body: formData
                 });
 
                 if (!response.ok) {
@@ -28,8 +20,8 @@ document.addEventListener("DOMContentLoaded", function () {
 
                 const result = await response.json();
                 form.reset(); // Efface le formulaire après envoi
-                successMessage.innerText = result.message; // Met à jour le message
-                successMessage.style.display = "block"; // Rend le message visible
+                successMessage.innerText = "✅ Merci ! Votre message a bien été envoyé.";
+                successMessage.style.display = "block";
             } catch (error) {
                 alert("🚨 Erreur d’envoi !");
                 console.error(error);
