@@ -1,45 +1,18 @@
-const http = require('http');
-const fs = require('fs');
-const path = require('path');
+const express = require("express");
+const path = require("path");
 
-const server = http.createServer((req, res) => {
-    let filePath = path.join(__dirname, 'public', req.url === '/' ? 'index.html' : req.url);
-    let extname = path.extname(filePath);
-    let contentType = 'text/html';
+const app = express();
+const port = process.env.PORT || 3000;
 
-    // Définir le type de contenu
-    switch (extname) {
-        case '.js':
-            contentType = 'text/javascript';
-            break;
-        case '.css':
-            contentType = 'text/css';
-            break;
-        case '.json':
-            contentType = 'application/json';
-            break;
-        case '.png':
-            contentType = 'image/png';
-            break;
-        case '.jpg':
-            contentType = 'image/jpg';
-            break;
-    }
+// Servir les fichiers statiques
+app.use(express.static(path.join(__dirname, "public")));
 
-    // Lire le fichier et l’envoyer en réponse
-    fs.readFile(filePath, (err, content) => {
-        if (err) {
-            res.writeHead(404);
-            res.end('404 - Fichier non trouvé');
-        } else {
-            res.writeHead(200, { 'Content-Type': contentType });
-            res.end(content, 'utf-8');
-        }
-    });
+// Route principale
+app.get("/", (req, res) => {
+    res.sendFile(path.join(__dirname, "public", "index.html"));
 });
 
-const PORT = process.env.PORT || 3000;
-server.listen(PORT, () => {
-    console.log(`Serveur démarré sur http://localhost:${PORT}`);
+// Lancer le serveur
+app.listen(port, () => {
+    console.log(`🚀 Serveur Express démarré sur http://localhost:${port}`);
 });
-console.log("Serveur démarré !");
