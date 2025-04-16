@@ -1,12 +1,12 @@
 {
   "name": "samdepann68",
   "version": "1.0.0",
-  "main": "server.js",  
+  "main": "server.js",
   "scripts": {
     "start": "node server.js"
   },
   "dependencies": {
-    "express": "^4.17.1",
+    "express": "^4.21.2",
     "nodemailer": "^6.9.2"
   }
 }
