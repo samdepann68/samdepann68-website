@@ -4,29 +4,31 @@ document.addEventListener("DOMContentLoaded", function () {
 
     if (form) {
         form.addEventListener("submit", async function(event) { 
-            event.preventDefault(); // Empêche le rechargement de la page
-
+            event.preventDefault(); 
+        
             const formData = new FormData(form);
-
+            const data = Object.fromEntries(formData.entries()); // ✅ Convertit FormData en JSON
+        
             try {
-                const response = await fetch("/api/submit-form", { // ✅ Ajout de /api/
+                const response = await fetch("/api/submit-form", { // ✅ Vérifie l’URL
                     method: "POST",
-                    body: formData
+                    headers: { "Content-Type": "application/json" }, // ✅ Ajoute le bon header
+                    body: JSON.stringify(data) // ✅ Envoie sous format JSON
                 });
-                
-
+        
                 if (!response.ok) {
                     throw new Error("❌ Une erreur est survenue.");
                 }
-
-                form.reset(); // Efface le formulaire après envoi
+        
+                form.reset();
                 successMessage.innerText = "✅ Merci ! Votre message a bien été envoyé.";
-                successMessage.style.display = "block"; // Rend le message visible
+                successMessage.style.display = "block";
             } catch (error) {
                 alert("🚨 Erreur d’envoi !");
                 console.error(error);
             }
         });
+        
     } else {
         console.error("🚨 Formulaire introuvable !");
     }

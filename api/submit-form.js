@@ -3,14 +3,11 @@ module.exports = (req, res) => {
         return res.status(405).json({ error: "🚨 Méthode non autorisée !" });
     }
 
-    const { nom, email, message } = req.body;
-
-    if (!nom || !email || !message) {
+    // ✅ Vérifie que les données sont bien en JSON
+    if (!req.body || !req.body.nom || !req.body.email || !req.body.message) {
         return res.status(400).json({ error: "❌ Tous les champs sont obligatoires !" });
     }
 
-    // 📌 Ici, tu peux enregistrer les données dans une base si besoin.
-    console.log(`Nouveau formulaire reçu : Nom: ${nom}, Email: ${email}, Message: ${message}`);
-
+    console.log("✅ Formulaire reçu :", req.body);
     res.status(200).json({ message: "✅ Formulaire traité avec succès !" });
 };
