@@ -1,7 +1,4 @@
 {
   "version": 2,
-  "routes": [
-      { "src": "/submit-form", "dest": "server.js" },
-      { "src": "/(.*)", "dest": "server.js" }
-  ]
+  "routes": [{ "src": "/submit-form", "dest": "api/submit-form.js" }]
 }
