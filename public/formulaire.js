@@ -9,10 +9,11 @@ document.addEventListener("DOMContentLoaded", function () {
             const formData = new FormData(form);
 
             try {
-                const response = await fetch("/submit-form", {
+                const response = await fetch("/api/submit-form", { // ✅ Ajout de /api/
                     method: "POST",
                     body: formData
                 });
+                
 
                 if (!response.ok) {
                     throw new Error("❌ Une erreur est survenue.");
