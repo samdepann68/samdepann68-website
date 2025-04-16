@@ -11,7 +11,7 @@ module.exports = (req, res) => {
     console.log("✅ Formulaire reçu :", req.body);
     res.status(200).json({ message: "✅ Formulaire traité avec succès !" });
 };
-console.log("🚀 Tentative d'envoi d'email à :", email);
+console.log("🚀 Tentative d'envoi d'email à :", req.body.email);
 transporter.sendMail(mailOptions, (error, info) => {
     if (error) {
         console.error("❌ Erreur d'envoi :", error);
@@ -21,3 +21,4 @@ transporter.sendMail(mailOptions, (error, info) => {
         return res.json({ message: "Email bien envoyé !" });
     }
 });
+
