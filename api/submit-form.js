@@ -1,3 +1,5 @@
+const nodemailer = require("nodemailer"); // Ensuite, importe Nodemailer
+
 const transporter = nodemailer.createTransport({
     service: "gmail",
     auth: {
@@ -6,7 +8,7 @@ const transporter = nodemailer.createTransport({
     }
 });
 
-const nodemailer = require("nodemailer");
+
 
 module.exports = (req, res) => {
     if (req.method !== "POST") {

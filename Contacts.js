@@ -30,9 +30,8 @@ module.exports = (req, res) => {
     const mailOptions = {
         from: "samdepann68@gmail.com",
         to: "samdepann68@gmail.com", // 📩 Ton adresse de réception
-        replyTo: email,
         subject: `Nouveau message de ${nom}`,
-        text: `🔹 Nom : ${nom}\n🔹 Email : ${email}\n🔹 Message : ${message}`
+        text: `👤 Nom: ${nom}\n📧 E-mail: ${email}\n\n📩 Message:\n${message}`
     };
 
     transporter.sendMail(mailOptions, (error, info) => {
