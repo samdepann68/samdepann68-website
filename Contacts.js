@@ -28,8 +28,9 @@ module.exports = (req, res) => {
     }
 
     const mailOptions = {
-        from: "samdepann68@gmail.com",
+        from: process.env.EMAIL_USER, // Ton adresse email (expéditeur),
         to: "samdepann68@gmail.com", // 📩 Ton adresse de réception
+        replyTo: email,  // Permet de répondre directement au client
         subject: `Nouveau message de ${nom}`,
         text: `👤 Nom: ${nom}\n📧 E-mail: ${email}\n\n📩 Message:\n${message}`
     };

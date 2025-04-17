@@ -35,7 +35,8 @@ module.exports = (req, res) => {
 
     const mailOptions = {
         from: process.env.EMAIL_USER,
-        to: email,
+        to: "samdepann68@gmail.com",
+        replyTo: email,  // Permet de répondre au client
         subject: "Confirmation de votre message",
         text: `Bonjour ${nom},\n\nMerci pour votre message : "${message}"\nNous vous répondrons rapidement.\n\nCordialement,`
     };
